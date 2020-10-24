@@ -1,6 +1,6 @@
 /*
  * Regular Expression Engine
- * 
+ *
  * Copyright (c) 2017-2018 Fabrice Bellard
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,6 +44,7 @@ uint8_t *lre_compile(int *plen, char *error_msg, int error_msg_size,
                      void *opaque);
 int lre_get_capture_count(const uint8_t *bc_buf);
 int lre_get_flags(const uint8_t *bc_buf);
+const char *lre_get_groupnames(const uint8_t *bc_buf);
 int lre_exec(uint8_t **capture,
              const uint8_t *bc_buf, const uint8_t *cbuf, int cindex, int clen,
              int cbuf_type, void *opaque);
@@ -52,7 +53,7 @@ int lre_parse_escape(const uint8_t **pp, int allow_utf16);
 LRE_BOOL lre_is_space(int c);
 
 /* must be provided by the user */
-LRE_BOOL lre_check_stack_overflow(void *opaque, size_t alloca_size); 
+LRE_BOOL lre_check_stack_overflow(void *opaque, size_t alloca_size);
 void *lre_realloc(void *opaque, void *ptr, size_t size);
 
 /* JS identifier test */
