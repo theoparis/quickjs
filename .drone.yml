@@ -5,10 +5,12 @@ name: default
 
 steps:
   - name: build
-    image: golang:1.18beta1-alpine  
+    image: docker.io/golang:1.18beta1-alpine  
     commands:
+      - "apk add build-base"
       - "go build"
   - name: test
-    image: golang:1.18beta1-alpine  
+    image: docker.io/golang:1.18beta1-alpine  
     commands:
+      - "apk add build-base"
       - "go test"
