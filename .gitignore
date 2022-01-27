@@ -1,1 +1,16 @@
 .idea/
+*.log*
+*.env*
+!.env.example
+.DS_Store
+build
+dist
+target
+*.img
+*.zip
+*.gz*
+*.7z
+*.tar*
+node_modules
+.cache
+.ccls-cache

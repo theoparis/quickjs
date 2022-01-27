@@ -1,6 +1,6 @@
 /*
  * C utilities
- *
+ * 
  * Copyright (c) 2017 Fabrice Bellard
  * Copyright (c) 2018 Charlie Gordon
  *
@@ -172,7 +172,7 @@ int __attribute__((format(printf, 2, 3))) dbuf_printf(DynBuf *s,
     va_list ap;
     char buf[128];
     int len;
-
+    
     va_start(ap, fmt);
     len = vsnprintf(buf, sizeof(buf), fmt, ap);
     va_end(ap);
@@ -278,10 +278,10 @@ int unicode_from_utf8(const uint8_t *p, int max_len, const uint8_t **pp)
     case 0xf4: case 0xf5: case 0xf6: case 0xf7:
         l = 3;
         break;
-	case 0xf8: case 0xf9: case 0xfa: case 0xfb:
+    case 0xf8: case 0xf9: case 0xfa: case 0xfb:
         l = 4;
         break;
-	case 0xfc: case 0xfd:
+    case 0xfc: case 0xfd:
         l = 5;
         break;
     default:
